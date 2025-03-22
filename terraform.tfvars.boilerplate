@@ -4,7 +4,7 @@
 # The Azure credentials need to be taken from a service principal. You can create one using the Azure CLI or the Azure portal.
 # For more information, visit: https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
 
-
+Test from dev
 
 #################################################################################################
 ### Global Variables ###
