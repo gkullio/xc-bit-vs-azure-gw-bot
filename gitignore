@@ -1,0 +1,9 @@
+# Exclude Terraform variable files
+*.tfvars
+terraform.tfvars.json
+
+# Exclude certificate files
+*.p12
+```
+
+You can add other patterns as needed.
