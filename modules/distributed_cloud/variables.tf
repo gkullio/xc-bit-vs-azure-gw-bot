@@ -19,8 +19,4 @@ variable "tenant" {
   type        = string
 }
 
-variable "pool-name" {
-  description = "The name of the origin pool"
-  type        = string
-}
 variable "web_app_name" {}
