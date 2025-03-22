@@ -89,4 +89,3 @@ variable "namespace" {}
 variable "name" {}
 variable "delegated_dns_domain" {}
 variable "tenant" {}
-variable "pool-name" {}
