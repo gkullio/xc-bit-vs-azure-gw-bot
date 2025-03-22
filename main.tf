@@ -12,10 +12,6 @@ module "azure-web-app" {
     source                  = "./modules/azure_app"
     resource_group_name     = azurerm_resource_group.rg.name
     location                = var.location
-    client_id               = var.client_id
-    client_secret           = var.client_secret
-    tenant_id               = var.tenant_id
-    subscription_id         = var.subscription_id
     service_plan_name       = var.service_plan_name
     os                      = var.os
     app_service_sku_name    = var.app_service_sku_name
