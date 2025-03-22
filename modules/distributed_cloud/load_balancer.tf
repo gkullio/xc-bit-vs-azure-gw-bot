@@ -28,6 +28,7 @@ resource "volterra_http_loadbalancer" "appProxy" {
 
   http {
     port = 80
+    dns_volterra_managed = true
   }
 
 
