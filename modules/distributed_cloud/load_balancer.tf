@@ -16,13 +16,21 @@ resource "volterra_http_loadbalancer" "appProxy" {
   #round_robin = true
   source_ip_stickiness = true
 
-  https_auto_cert {
-    add_hsts             = true
-    default_loadbalancer = false
-    port                 = "443"
-    http_redirect        = true
+############### Uncomment this section if you want to use HTTPS Auto Cert ################
+############### Then comment out the http block ################
+  #https_auto_cert {
+  #  add_hsts             = true
+  #  default_loadbalancer = false
+  #  port                 = "443"
+  #  http_redirect        = true
+  #}
+##########################################################################################
+
+  http {
+    port = 80
   }
-  
+
+
  ############### Attach a Default Pool to the Load Balancer ################
   #default_route_pools {
   #  pool {

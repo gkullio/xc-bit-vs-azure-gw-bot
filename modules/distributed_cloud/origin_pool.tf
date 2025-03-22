@@ -15,14 +15,20 @@ resource "volterra_origin_pool" "origin" {
       "key1" = "main_origin"
     }
   }
-  port = 443
+  ########### Uncomment the following block to enable 443 for the origin pool ####################
+  ########### Comment out the port = 80 line and the no_tls = true line if 443 is chosen ####################
+  # port = 443
+  
+  port = 80
+  no_tls = true
 
-  use_tls {
-    use_host_header_as_sni = false
-    tls_config {
-      default_security  = true
-    }
-    skip_server_verification = true
-    no_mtls                  = true
-  }
+  ########### Uncomment the following block to enable TLS settings for the origin pool ####################
+  #use_tls {
+  #  use_host_header_as_sni = false
+  #  tls_config {
+  #    default_security  = true
+  #  }
+  #  skip_server_verification = true
+  #  no_mtls                  = true
+  #}
 }

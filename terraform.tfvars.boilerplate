@@ -1,85 +1,99 @@
+# NOTE: This is a boilerplate file. You must fill in the values for your environment before using it.
+# Only lines with trailing comments **NEED** to be modified. All other lines should remain unchanged.
+
+# The Azure credentials need to be taken from a service principal. You can create one using the Azure CLI or the Azure portal.
+# For more information, visit: https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
+
+
+
 #################################################################################################
 ### Global Variables ###
 #################################################################################################
 
 # Resource Group Settings
-rg_name             = "your-resource-group-name"         # Name of the resource group where all resources will be deployed.
-location            = "your-azure-region"                # Azure region (e.g., "West US 2").
+rg_name                         = "your-resource-group-name"         # Name of the resource group where all resources will be deployed.
+location                        = "your-azure-region"                # Azure region (e.g., "westus2").
 
 # Owner Information
-owner               = "your name"                        # Owner of the deployment.
-owner_email         = "your.email@example.com"           # Contact email for notifications and tagging purposes.
+owner                           = "your name"                        # Your name for ownership identification.
+owner_email                     = "your.email@example.com"           # Contact email for notifications and tagging purposes.
 
 # !!!Azure Credentials!!! # 
 # NOTE: These values are sensitive. For a production environment consider using a secure method rather than hardcoding.
-client_id           = "your-azure-client-id"             # Azure Service Principal client ID.
-client_secret       = "your-azure-client-secret"         # Azure Service Principal client secret.
-tenant_id           = "your-azure-tenant-id"             # Azure Active Directory tenant ID.
-subscription_id     = "your-azure-subscription-id"       # Azure subscription ID.
+
+client_id                       = "your-azure-client-id"             # Azure Service Principal client ID.
+client_secret                   = "your-azure-client-secret"         # Azure Service Principal client secret.
+tenant_id                       = "your-azure-tenant-id"             # Azure Active Directory tenant ID.
+subscription_id                 = "your-azure-subscription-id"       # Azure subscription ID.
 
 #################################################################################################
 ### AZURE VNET VARIABLE VALUES ###
 #################################################################################################
 
-vnet_name               = "your-vnet-name"               # The name of your Virtual Network.
-vnet_address_space      = "10.0.0.0/16"                  # Address space for the Virtual Network.
-ext_subnet_name         = "external-subnet"              # Name of the external subnet (usually public-facing).
-ext_address_space       = "10.0.1.0/24"                  # Address space for external subnet.
-app_gw_pip_name         = "your-app-gw-pip-name"         # Public IP resource name for the Application Gateway.
+vnet_name                       = "your-vnet-name"                   # Name of the virtual network.
+vnet_address_space              = "10.0.0.0/16"                  
+ext_subnet_name                 = "external-subnet"              
+ext_address_space               = "10.0.1.0/24"                  
+app_gw_pip_name                 = "your-app-gw-pip-name"             # Public IP resource name for the Application Gateway.
 
 #################################################################################################
 ### AZURE APP SERVICE VARIABLE VALUES ###
 #################################################################################################
 
 # App Service Plan Settings
-service_plan_name    = "your-service-plan-name"         # Name of the App Service Plan.
-os                   = "Linux"                          # Operating system for the App Service (Linux/Windows).
-app_service_sku_name = "F1"                             # SKU for the App Service (e.g., F1 for Free tier).
-# For more SKUs, visit: https://azure.microsoft.com/en-us/pricing/details/app-service/linux/
+service_plan_name               = "your-service-plan-name"           # Name of the App Service Plan.
+
+os                              = "Linux"                          
+app_service_sku_name            = "F1"                             
+############# For more SKUs, visit: https://azure.microsoft.com/en-us/pricing/details/app-service/linux/
 
 # Web Application Settings
-web_app_name         = "your-web-app-name"              # Name of the web application.
-public_access        = "true"                           # Set to "true" for public access; "false" otherwise.
+web_app_name                    = "your-web-app-name"                # Name of the web application.
+public_access                   = "true"                           
 
 # Site Configuration
-always_on            = "false"                          # Keep the web application always running (recommended "true" for production).
+always_on                       = "false"                          
 
 # Allowed IP Address Ranges for access (modify as needed)
 # This includes Distributed Cloud Regional edges and other specific IPs.
-ip_addr_vpn         = "104.219.105.84/32"                       # Example: VPN network IP.
-ip_addr_home        = "X.X.X.X/32"                              # Example: Home IP address (replace X.X.X.X with your actual IP).
-ip_addr_RE_1        = "5.182.215.0/25"
-ip_addr_RE_2        = "84.54.61.0/25"
-ip_addr_RE_3        = "23.158.32.0/25"
-ip_addr_RE_4        = "84.54.62.0/25"
-ip_addr_RE_5        = "185.94.142.0/25"
-ip_addr_RE_6        = "185.94.143.0/25"
-ip_addr_RE_7        = "159.60.190.0/24"
-ip_addr_RE_8        = "159.60.168.0/24"
-ip_addr_RE_9        = "159.60.180.0/24"
-ip_addr_RE_10       = "159.60.174.0/24"
-ip_addr_RE_11       = "159.60.176.0/24"
+
+ip_addr_vpn                     = "104.219.105.84/32"                # Example: VPN network IP.
+ip_addr_home                    = "X.X.X.X/32"                       # Example: Home IP address (replace X.X.X.X with your actual IP).
+
+ip_addr_RE_1                    = "5.182.215.0/25"
+ip_addr_RE_2                    = "84.54.61.0/25"
+ip_addr_RE_3                    = "23.158.32.0/25"
+ip_addr_RE_4                    = "84.54.62.0/25"
+ip_addr_RE_5                    = "185.94.142.0/25"
+ip_addr_RE_6                    = "185.94.143.0/25"
+ip_addr_RE_7                    = "159.60.190.0/24"
+ip_addr_RE_8                    = "159.60.168.0/24"
+ip_addr_RE_9                    = "159.60.180.0/24"
+ip_addr_RE_10                   = "159.60.174.0/24"
+ip_addr_RE_11                   = "159.60.176.0/24"
 
 # Docker Configuration
-docker_image_name   = "stockdemo/demoapp:latest"          # Docker image and tag for container deployment.
+docker_image_name   = "stockdemo/demoapp:latest"          
 
 #################################################################################################
 ### DISTRIBUTED CLOUD VARIABLE VALUES ###
 #################################################################################################
 
-namespace            = "your-namespace"                 # Namespace for the distributed cloud environment.
-name                 = "your-short-name"                # Short identifier for the deployment.
-delegated_dns_domain = "your-delegated-dns-domain"      # Domain delegated for the application (e.g., "amer-ent.f5demos.com").
-tenant               = "your-dc-tenant-id"              # Distributed cloud tenant identifier.
+namespace                       = "your-namespace"                   # Your assigned namespace within Distributed Cloud.
+name                            = "your-short-name"                  # Short identifier for the deployment.
+delegated_dns_domain            = "your-delegated-dns-domain"        # Domain delegated for the application (e.g., "amer-ent.f5demos.com").
+tenant                          = "your-XC-tenant"                   # Distributed cloud tenant identifier. (e.g., f5-amer-ent)
 
 #################################################################################################
 ### Application Gateway VARIABLE VALUES ###
 #################################################################################################
 
 # Application Gateway Configuration (Referenced in app_gw_main.tf)
-application_gw_name             = "your-app-gw-name"         # Name of the Application Gateway to find it easily.
+
+application_gw_name             = "your-app-gw-name"                 # Name of the Application Gateway to find it easily.
 
 # You can change these names if you feel the need, they are arbitrary but should be unique within the resource group.
+
 gateway_ip_configuration_name   = "app-gw-ip-config"
 frontend_port_name              = "app-gw-frontend-port"
 frontend_ip_configuration_name  = "app-gw-frontend-ip-config"
@@ -89,11 +103,11 @@ http_setting_name               = "app-gw-http-setting"
 request_routing_rule_name       = "app-gw-request-routing-rule"
 
 #################################################################################################
-### WEB APPLICATION FIREWALL (WAF) VARIABLE VALUES ###
+### AZURE WEB APPLICATION FIREWALL (WAF) VARIABLE VALUES ###
 #################################################################################################
 
 # WAF Settings for the Application Gateway (Referenced in app_gw_waf.tf)
-
 # You can change these names if you feel the need, they are arbitrary but should be unique within the resource group.
-waf_policy_name     = "app-gw-waf-policy"              # Name of the Web Application Firewall policy.
-waf_policy_mode     = "Prevention"                        # Mode can be "Prevention" or "Detection".
+
+waf_policy_name                 = "app-gw-waf-policy"                 
+waf_policy_mode                 = "Prevention"                        

@@ -11,5 +11,5 @@ output "web_app_hostname" {
 }
 
 output "default_hostname_full_url" {
-  value = "https://${azurerm_linux_web_app.linux_webapp.default_hostname}"
+  value = "http://${azurerm_linux_web_app.linux_webapp.default_hostname}"
 }
