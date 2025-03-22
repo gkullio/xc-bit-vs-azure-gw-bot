@@ -29,8 +29,8 @@ A few things to make this work.
 !!!!! If you DO NOT want to use the python script, you can set the export variables in the CLI.
 This is recommended for the initial build, but the python script is much easier to use for subsequent builds.
    
-   export VES_P12_PASSWORD="password of cert file"\n
-   export VOLT_API_P12_FILE="path to cert file"
+   1. export VES_P12_PASSWORD="password of cert file"
+   2. export VOLT_API_P12_FILE="path to cert file"
 
 Then run the follwing steps 
 1. terraform init
