@@ -93,5 +93,7 @@ request_routing_rule_name       = "app-gw-request-routing-rule"
 #################################################################################################
 
 # WAF Settings for the Application Gateway (Referenced in app_gw_waf.tf)
-waf_policy_name     = "your-waf-policy-name"              # Name of the Web Application Firewall policy.
+
+# You can change these names if you feel the need, they are arbitrary but should be unique within the resource group.
+waf_policy_name     = "app-gw-waf-policy"              # Name of the Web Application Firewall policy.
 waf_policy_mode     = "Prevention"                        # Mode can be "Prevention" or "Detection".
