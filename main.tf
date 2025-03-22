@@ -42,7 +42,6 @@ module "distributed-cloud" {
     name                    = "${var.name}-${random_id.random_id.dec}"
     delegated_dns_domain    = var.delegated_dns_domain
     tenant                  = var.tenant
-    pool-name               = var.pool-name
     web_app_name            = module.azure-web-app.web_app_name
 }
 
