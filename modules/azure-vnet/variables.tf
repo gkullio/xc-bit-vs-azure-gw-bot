@@ -2,10 +2,6 @@ variable "vnet_name" {}
 variable "resource_group_name" {}
 variable "location" {}
 variable "vnet_address_space" {}
-variable "mgmt_subnet_name" {}
-variable "mgmt_address_space" {}
-variable "int_subnet_name" {}
-variable "int_address_space" {}
 variable "ext_subnet_name" {}
 variable "ext_address_space" {}
 variable "app_gw_pip_name" {}
