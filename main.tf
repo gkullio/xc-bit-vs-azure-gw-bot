@@ -52,12 +52,8 @@ module "azure-vnet" {
     location                = var.location
     vnet_name               = "${var.vnet_name}-${random_id.random_id.dec}"
     vnet_address_space      = var.vnet_address_space
-    mgmt_subnet_name        = "${var.mgmt_subnet_name}-${random_id.random_id.dec}"
-    mgmt_address_space      = var.mgmt_address_space
     ext_subnet_name         = "${var.ext_subnet_name}-${random_id.random_id.dec}"
     ext_address_space       = var.ext_address_space
-    int_subnet_name         = "${var.int_subnet_name}-${random_id.random_id.dec}"
-    int_address_space       = var.int_address_space 
     app_gw_pip_name         = var.app_gw_pip_name
     owner                   = var.owner
     owner_email             = var.owner_email
