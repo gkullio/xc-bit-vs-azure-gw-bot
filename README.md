@@ -56,3 +56,4 @@ A[Client]  --> B((Distributed Cloud))
 A --> C(Azure WAF / BOT)
 B --> D{Azure Web App - DemoApp}
 C --> D
+```
