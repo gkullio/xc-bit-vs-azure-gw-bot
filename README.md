@@ -49,6 +49,7 @@ Run the tf-python-choice.py with "python tf-python-choice.py" and select 1 to bu
 If there are any errors, they will dump to the screen.  They are usually verbose.
    
 
+## Mermaid Diagram of the Environment
 Here is an over all diagram of the environment.
 ```mermaid
 flowchart LR
