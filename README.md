@@ -33,16 +33,38 @@ This is recommended for the initial build, but the python script is much easier 
    2. export VOLT_API_P12_FILE="path to cert file"
 
 Then run the follwing steps 
-1. terraform init
-2. terraform plan
-   ----hope and pray nothing needs modifying
-3. terraform apply --auto-approve
-
+```bash
+terraform init
+terraform plan
+```
+----hope and pray nothing needs modifying
+```bash
+terraform apply --auto-approve
+```
 Once you are finished showing the efficacy of XC Bot Defense versus Azure WAF and BOT, you can destroy the environment with "terraform destroy --auto-approve"
-
 
 
 Once it's all been debugged....
 Run the tf-python-choice.py with "python tf-python-choice.py" and select 1 to build.  
 If there are any errors, they will dump to the screen.  They are usually verbose.
    
+
+## Mermaid Diagram of the Environment
+Here is an over all diagram of the environment.
+```mermaid
+flowchart LR
+    Start["Start Here"] --> Merge["Azure Gateway"] & Merge2["Distributed Cloud"]
+    Merge --> A1["Azure WAF"] & A2["Azure BOT"]
+    A1 --> Merge3["Azure Routing"]
+    A2 --> Merge3
+    Merge3 --> Endpoint["Demo App"]
+    Merge2 --> B1["XC WAF"] & B2["XC BOT"]
+    B1 --> Merge6["Internet Routing"]
+    B2 --> Merge6
+    Merge6 --> Endpoint
+
+    style A1 stroke:#333,stroke-width:2px,fill:#f96
+    style A2 stroke:#333,stroke-width:2px,fill:#f93
+    style B1 stroke:#333,stroke-width:2px,fill:#00DA22
+    style B2 stroke:#333,stroke-width:2px,fill:#00DA22
+```
