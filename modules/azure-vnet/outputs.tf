@@ -12,5 +12,5 @@ output "app_gw_pip_id" {
 }
 output "app_gw_pip_ip_fqdn" {
   description   = "The FQDN of the Application Gateway public IP"
-  value         = azurerm_public_ip.app_gw_pip.fqdn
+  value         = "http://${azurerm_public_ip.app_gw_pip.fqdn}"
 }

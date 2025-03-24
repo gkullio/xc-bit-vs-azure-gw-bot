@@ -12,12 +12,12 @@ output "Links_to_Azure_and_Distributed_Cloud_proxies" {
   value = {
     "Distributed Cloud FQDN"  = module.distributed-cloud.XC_LB_FQDN,
     
-    "Azure App Gateway FQDN"  = "http://${module.azure-vnet.app_gw_pip_ip_fqdn}"
+    "Azure App Gateway FQDN"  = module.azure-vnet.app_gw_pip_ip_fqdn
   }
 }
 
 output "Direct_ink_to_Azure_Web_App--NO_SECURITY" {
   value = {
-    Azure_web-app_URL         = "http://${module.azure-web-app.default_hostname_full_url}"
+    Azure_web-app_URL         = module.azure-web-app.default_hostname_full_url
   }
 }
