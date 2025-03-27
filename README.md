@@ -1,4 +1,4 @@
-A few things to make this work.
+## A few things to make this work.
 
 1. Copy and paste the terraform.tfvars.boilerpate to the same folder and rename it terraform.tfvars
 
@@ -10,9 +10,12 @@ A few things to make this work.
    2. client_secret = "your service principle secret"
    3. subscription_id = "your azure subscription id"
    4. tenant_id = "your azure tenant id"
-   
 
-4. generate and download your distributed cloud API certificate to the root of this file
+## Retrieve Azure Service principle from Azure Portal or CLI
+   1. Recommend using the Contributor role for the Service Principal
+   2. Azure CLI Example: az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>
+
+## generate and download your distributed cloud API certificate to the root of this file
 
    1. Login to the Distributed Cloud console
    2. Click on the user icon in the top right corner and select "Account Settings"
@@ -53,18 +56,14 @@ If there are any errors, they will dump to the screen.  They are usually verbose
 Here is an over all diagram of the environment.
 ```mermaid
 flowchart LR
-    Start["Start Here"] --> Merge["Azure Gateway"] & Merge2["Distributed Cloud"]
-    Merge --> A1["Azure WAF"] & A2["Azure BOT"]
+    Start["Client"] --> Merge["Azure Gateway"] & Merge2["Distributed Cloud"]
+    Merge --> A1["Azure WAF & BOT"]
     A1 --> Merge3["Azure Routing"]
-    A2 --> Merge3
     Merge3 --> Endpoint["Demo App"]
-    Merge2 --> B1["XC WAF"] & B2["XC BOT"]
+    Merge2 --> B1["XC WAF & BOT"]
     B1 --> Merge6["Internet Routing"]
-    B2 --> Merge6
     Merge6 --> Endpoint
 
     style A1 stroke:#333,stroke-width:2px,fill:#f96
-    style A2 stroke:#333,stroke-width:2px,fill:#f93
     style B1 stroke:#333,stroke-width:2px,fill:#00DA22
-    style B2 stroke:#333,stroke-width:2px,fill:#00DA22
 ```
