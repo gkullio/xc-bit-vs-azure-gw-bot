@@ -5,7 +5,6 @@ import time
 
 # Set environment variables before running commands
 os.environ["VES_P12_PASSWORD"] = ""
-os.environ["VOLT_API_P12_FILE"] = ""
 
 def run_prep():
     """Executes the prep.sh script and stops if an error occurs."""

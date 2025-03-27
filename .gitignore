@@ -8,7 +8,7 @@ terraform.tfvars.json
 
 # Exclude certificate files
 *.p12
-```
 
+*.py
 
 You can add other patterns as needed.

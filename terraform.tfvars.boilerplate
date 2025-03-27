@@ -20,6 +20,10 @@ owner_email                     = "your.email@example.com"           # Contact e
 
 # !!!Azure Credentials!!! # 
 # NOTE: These values are sensitive. For a production environment consider using a secure method rather than hardcoding.
+# Azure Service Principal Information
+# --Retreive from Azure Portal or CLI--
+# --Recommend using the Contributor role for the Service Principal--
+# Azure CLI Example: az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>
 
 client_id                       = "your-azure-client-id"             # Azure Service Principal client ID.
 client_secret                   = "your-azure-client-secret"         # Azure Service Principal client secret.
